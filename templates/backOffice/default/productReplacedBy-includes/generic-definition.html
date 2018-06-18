@@ -1,0 +1,25 @@
+{* render_form_field form=$form field="replaced_by_id" value=$product_replaced *}
+{function menutop level=0}
+{loop type="category" name="navigation-$level" parent=$parent need_count_child=1}
+{if $CHILD_COUNT> 0}
+    <optgroup label="{$TITLE}">
+        {menutop parent=$ID level=$level+1}
+    </optgroup>
+{else}
+    <optgroup label="{$TITLE}">
+    {loop type="product" name="product-$level" category={$ID} exclude={$product_id} order="alpha" visible="*"}
+        <option value="{$ID}" {if $ID == $product_replaced}selected{/if}>{$TITLE} [{$REF}]</option>
+    {/loop}
+    </optgroup>
+{/if}
+{/loop}
+{/function}
+
+<div class="form-group ">
+    <label class="control-label">{intl l="Product replaced by" d="productreplacedby.bo.default"}</label>
+    <select name="thelia_product_modification[replaced_by_id]" class="form-control">
+        <option value="" {if $ID == $product_replaced}selected{/if}>{intl l="==== Nothing ====" d="productreplacedby.bo.default"}</option>
+        {menutop parent=$category_parent}
+    </select>
+    <span class="help-block">{intl l="Select the product that comes in replacement" d="productreplacedby.bo.default"}</span>
+</div>

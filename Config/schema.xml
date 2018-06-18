@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database defaultIdMethod="native" name="thelia"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../core/vendor/propel/propel/resources/xsd/database.xsd" >
+
+    <table name="product_replaced_by" namespace="ProductReplacedBy\Model">
+        <column name="product_id" primaryKey="true" required="true" type="INTEGER" />
+        <column name="replaced_by_id" required="true" type="INTEGER" />
+        <foreign-key foreignTable="product" name="fk_product_replaced_by_product_id" onDelete="CASCADE" onUpdate="RESTRICT">
+            <reference foreign="id" local="product_id" />
+        </foreign-key>
+        <foreign-key foreignTable="product" name="fk_product_replaced_by_replaced_by_id" onDelete="CASCADE" onUpdate="RESTRICT">
+            <reference foreign="id" local="replaced_by_id" />
+        </foreign-key>
+    </table>
+    <!--
+    See propel documentation on http://propelorm.org for all information about schema file
+    -->
+    <external-schema filename="local/config/schema.xml" referenceOnly="true" />
+</database>

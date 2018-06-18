@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns="http://symfony.com/schema/routing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+  <!--
+
+    if a /admin/module/productreplacedby/ route is provided, a "Configuration" button will be displayed
+    for the module in the module list. Clicking this button will invoke this route.
+
+    <route id="my_route_id" path="/admin/module/productreplacedby">
+        <default key="_controller">ProductReplacedBy\Full\Class\Name\Of\YourConfigurationController::methodName</default>
+    </route>
+
+    <route id="my_route_id" path="/admin/module/productreplacedby/route-name">
+        <default key="_controller">ProductReplacedBy\Full\Class\Name\Of\YourAdminController::methodName</default>
+    </route>
+
+    <route id="my_route_id" path="/my/route/name">
+        <default key="_controller">ProductReplacedBy\Full\Class\Name\Of\YourOtherController::methodName</default>
+    </route>
+
+    ...add as many routes as required.
+
+    <route>
+    ...
+    </route>
+    -->
+  <route id="productreplacedby.product_replaced_by.list" path="/admin/module/ProductReplacedBy/product_replaced_by" methods="get">
+    <default key="_controller">ProductReplacedBy:ProductReplacedBy:default</default>
+  </route>
+  <route id="productreplacedby.product_replaced_by.create" path="/admin/module/ProductReplacedBy/product_replaced_by" methods="post">
+    <default key="_controller">ProductReplacedBy:ProductReplacedBy:create</default>
+  </route>
+  <route id="productreplacedby.product_replaced_by.view" path="/admin/module/ProductReplacedBy/product_replaced_by/edit" methods="get">
+    <default key="_controller">ProductReplacedBy:ProductReplacedBy:update</default>
+  </route>
+  <route id="productreplacedby.product_replaced_by.edit" path="/admin/module/ProductReplacedBy/product_replaced_by/edit" methods="post">
+    <default key="_controller">ProductReplacedBy:ProductReplacedBy:processUpdate</default>
+  </route>
+  <route id="productreplacedby.product_replaced_by.delete" path="/admin/module/ProductReplacedBy/product_replaced_by/delete" methods="post">
+    <default key="_controller">ProductReplacedBy:ProductReplacedBy:delete</default>
+  </route>
+</routes>
