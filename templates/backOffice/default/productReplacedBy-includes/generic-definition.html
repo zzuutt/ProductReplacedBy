@@ -3,6 +3,9 @@
 {loop type="category" name="navigation-$level" parent=$parent need_count_child=1}
 {if $CHILD_COUNT> 0}
     <optgroup label="{$TITLE}">
+        {loop type="product" name="product-$level" category={$ID} exclude={$product_id} order="alpha" visible="*"}
+        <option value="{$ID}" {if $ID == $product_replaced}selected{/if}>{$TITLE} [{$REF}]</option>
+        {/loop}
         {menutop parent=$ID level=$level+1}
     </optgroup>
 {else}
