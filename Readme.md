@@ -45,7 +45,7 @@ le paramètre __find__ peut prendre les valeurs suivantes:
 
 |Valeur   |Description |
 |---        |--- |
-| **first** valeur par défaut | renvoie l'ID du produit de remplacement |
+| **first** (valeur par défaut) | renvoie l'ID du produit de remplacement |
 | last | Si le produit est remplacé par un produit, ce dernier est rempacé aussi... renvoie l'ID du dernier produit de remplacement |
 | all | renvoie la liste de tous les produits de remplacement |
 
