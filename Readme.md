@@ -34,13 +34,11 @@ Le module ajoute un entrée 'Product Replaced By' dans sur la fiche du produit d
 |$REPLACED_BY_ID | id du nouveau produit. |
 
 ### Exemple
-
+```html
 {loop type="product-replaced-by" product_id=$ID}
-
     {loop type="product" id=$REPLACED_BY_ID}....{/loop}
-    
 {/loop}
-
+```
 *****
 Vous pouvez également vérifier si un produit est remplacé en utilisant l'extension Smarty :
 le paramètre __find__ peut prendre les valeurs suivantes:
