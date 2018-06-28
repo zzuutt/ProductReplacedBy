@@ -36,7 +36,9 @@ Le module ajoute un entrée 'Product Replaced By' dans sur la fiche du produit d
 ### Exemple
 
 {loop type="product-replaced-by" product_id=$ID}
+
     {loop type="product" id=$REPLACED_BY_ID}....{/loop}
+    
 {/loop}
 
 *****
